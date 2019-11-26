@@ -16,6 +16,7 @@ contract Acid {
   }
 
   function burn() public returns (bool) {
+    // Rate will be calculated based on the nearest decimal
     uint256 _amount = DummyDGD(dgdToken).balanceOf(msg.sender);
     uint256 _wei = _amount * refundRate;
     require(DummyDGD(dgdToken).transferFrom(msg.sender, 0x0);
@@ -23,6 +24,4 @@ contract Acid {
     return _user.call.value(_wei).gas(100000)();
   }
 
-
-  }
 }
