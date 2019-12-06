@@ -28,7 +28,7 @@ Load your DGD Address on MyCrypto.com and send a custom transaction using the fo
 |-------|-------|
 | To | `0xe0b7927c4af23765cb51314a0e0521a9645f0e2a` |
 | Value | `0` |
-| Data | `0x095ea7b3000000000000000000000000de09e74d4888bc4e65f589e8c13bce9f71ddf4c700000000000000000000000000000000000000000000000000071afd498d0000` (to be updated with correct value when contract is deployed to mainnet) |
+| Data | `0x095ea7b30000000000000000000000007908cef1344929f7b5c111375104b510db481add00000000000000000000000000000000000000000000000000071afd498d0000` (Kovan Data) |
 | Gas Limit | `1000000` |
 
 
@@ -38,7 +38,7 @@ Load your DGD Address on MyCrypto.com and send a custom transaction using the fo
 
 | Field | Value |
 |-------|-------|
-| To | `0x51a240271AB8AB9f9a21C82d9a85396b704E164d` (to be updated with correct value when contract is deployed to mainnet) |
+| To | `0x7908Cef1344929F7B5c111375104B510db481ADd` (Kovan Address) |
 | Value | `0` |
 | Data | `0x44df8e70` |
 | Gas Limit | `1500000` |
