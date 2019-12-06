@@ -2,3 +2,4 @@
 truffle-config.js
 kovan.env
 mainnet.env
+testwallets/**
