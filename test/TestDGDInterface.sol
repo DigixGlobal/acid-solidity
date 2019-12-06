@@ -14,12 +14,4 @@ contract TestDGDInterface {
     Assert.equal(dgd.balanceOf(tx.origin), expected, "Owner should have 2000000000000000 DGD initially");
   }
 
-  function testInitialBalanceWithNewDGDInterface() public {
-    DGDInterface dgd = new DGDInterface();
-
-    uint expected = 2000000000000000;
-
-    Assert.equal(dgd.balanceOf(tx.origin), expected, "Owner should have 2000000000000000 MetaCoin initially");
-  }
-
 }
