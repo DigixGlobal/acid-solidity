@@ -27,6 +27,8 @@ contract Acid {
     isInitialized = false;
   }
 
+  function () external payable {}  
+
   function init(uint256 _weiPerNanoDGD, address _dgdTokenContract) public isOwner() returns (bool _success) {
     weiPerNanoDGD = _weiPerNanoDGD;
     dgdTokenContract = _dgdTokenContract;

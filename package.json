@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@digix/truffle-lightwallet-provider": "^0.1.4",
-    "ganache-cli": "^6.7.0"
+    "ganache-cli": "^6.7.0",
+    "truffle-hdwallet-provider": "^1.0.17"
   }
 }
