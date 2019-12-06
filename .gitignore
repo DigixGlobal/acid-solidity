@@ -1,2 +1,4 @@
 .node_modules/**
 truffle-config.js
+kovan.env
+mainnet.env

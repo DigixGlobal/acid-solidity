@@ -2,15 +2,15 @@
 const HDWalletProvider = require("truffle-hdwallet-provider");
 
 
-const { KEYSTORE, PASSWORD } = process.env;
+const { SECRET_MNEMONIC } = process.env;
 
-if (!KEYSTORE || !PASSWORD) { throw new Error('You must export KEYSTORE and PASSWORD (see truffle.js)'); }
+if (!SECRET_MNEMONIC) { throw new Error('You must export MNEMONIC (see truffle-config.js)'); }
 
 module.exports = {
   networks: {
     kovan: {
       provider: new HDWalletProvider(
-        "hard oppose there weapon input nerve tourist shadow absurd pottery enter fashion",
+        SECRET_MNEMONIC,
         'https://kovan.infura.io/v3/e6ba587382884a93bbe04b2ab0800085',
         0,
         20
@@ -21,8 +21,8 @@ module.exports = {
     },
     mainnet: {
       provider: new HDWalletProvider(
-        "hard oppose there weapon input nerve tourist shadow absurd pottery enter fashion",
-        'https://kovan.infura.io/',
+        SECRET_MNEMONIC,
+        'https://mainnet.infura.io/v3/cc67a7ce67994f56b884d24179943047',
         0,
         20
       ),
@@ -34,7 +34,7 @@ module.exports = {
       host: process.env.DOCKER ? 'ganache' : 'localhost',
       port: 8545,
       network_id: '*',
-      gas: 7850000,
+      gas: 10000000,
     }
   },
   solc: {
