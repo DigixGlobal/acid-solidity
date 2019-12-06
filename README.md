@@ -16,9 +16,9 @@ Load your DGD Address on MyCrypto.com and send a custom transaction using the fo
 
 | Field | Value |
 |-------|-------|
-| To | `0xcEBC6356e7146431C4bF9BfF3359244912B5f3D3` |
+| To | `0xAca76c4e0748163dF74bc7E2d68Ba3F52753e9bc` |
 | Value | `0` |
-| Data | `0x095ea7b30000000000000000000000007908cef1344929f7b5c111375104b510db481add00000000000000000000000000000000000000000000000000071afd498d0000`  |
+| Data | `0x095ea7b30000000000000000000000000c516b62d0c8188434934a477c6f68d294c2158b00000000000000000000000000000000000000000000000000071afd498d0000`  |
 | Gas Limit | `1000000` |
 
 
@@ -28,7 +28,7 @@ Load your DGD Address on MyCrypto.com and send a custom transaction using the fo
 
 | Field | Value |
 |-------|-------|
-| To | `0x7908Cef1344929F7B5c111375104B510db481ADd` |
+| To | `0x0c516B62d0c8188434934A477c6f68D294C2158b` |
 | Value | `0` |
 | Data | `0x44df8e70` |
 | Gas Limit | `1500000` |
@@ -43,7 +43,7 @@ Load your DGD Address on MyCrypto.com and send a custom transaction using the fo
 |-------|-------|
 | To | `0xe0b7927c4af23765cb51314a0e0521a9645f0e2a` |
 | Value | `0` |
-| Data | `0x095ea7b30000000000000000000000007908cef1344929f7b5c111375104b510db481add00000000000000000000000000000000000000000000000000071afd498d0000`  |
+| Data | `TBD`  |
 | Gas Limit | `1000000` |
 
 

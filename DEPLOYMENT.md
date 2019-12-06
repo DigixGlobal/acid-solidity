@@ -17,7 +17,7 @@ wei per DGD value 193124288 @ 386248576296155750000000 wei (386248.57629615575 E
 
 ```javascript
 var acid = await Acid.deployed();
-var dgdToken = '0xcEBC6356e7146431C4bF9BfF3359244912B5f3D3';
+var dgdToken = '0xAca76c4e0748163dF74bc7E2d68Ba3F52753e9bc';
 acid.init(193124288,dgdToken).sendTransaction({from: owner, gas: 300000, gasPrice web3.eth.toWei(20, 'gwei')});
 ```
 
