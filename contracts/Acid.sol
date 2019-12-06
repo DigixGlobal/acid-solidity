@@ -40,11 +40,11 @@ contract Acid {
     // Rate will be calculated based on the nearest decimal
     uint256 _amount = DGDInterface(dgdTokenContract).balanceOf(msg.sender);
     uint256 _wei = _amount * weiPerNanoDGD;
-    require(DGDInterface(dgdTokenContract).transferFrom(msg.sender, 0x0000000000000000000000000000000000000000, _amount));
+    require(address(this).balance >= _wei, "Contract does not have enough funds");
+    require(DGDInterface(dgdTokenContract).transferFrom(msg.sender, 0x0000000000000000000000000000000000000000, _amount), "Sender does not have any DGDs or sender has not approved dissolution contract on DGD token contract");
     address _user = msg.sender;
     (_success,) = _user.call.value(_wei).gas(150000)('');
     emit Refund(_user, _amount, _wei);
   }
-
 
 }
