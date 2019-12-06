@@ -1,25 +1,16 @@
 {
   "name": "@digix/acid-solidity",
-  "version": "0.9.0",
+  "version": "0.9.5",
   "description": "Digix DGD Dissolution",
   "license": "BSD-3-Clause",
   "author": "DigixGlobal",
   "files": [
     "build/",
-    "contracts/",
-    "spectrum/"
+    "contracts/"
   ],
   "scripts": {
     "truffle": "node ./node_modules/truffle/cli.js",
     "test": "./node_modules/.bin/truffle test",
-    "test-server": "./node_modules/.bin/testrpc -p 6545 --verbose",
-    "test-server-attach": "geth attach http://localhost:6545",
-    "dev": "bash scripts/electron/run.sh",
-    "docs:init": "rm -rf ./scripts/doxity; rm -rf .doxityrc; ./node_modules/.bin/doxity init",
-    "docs:build": "./node_modules/.bin/doxity build",
-    "docs:compile": "./node_modules/.bin/doxity compile",
-    "deploy:kovan": "BLOCK_DRIFT=10 PRICEFEED_KEY='kovan' truffle migrate --network kovan --reset;",
-    "install": "cd node_modules/truffle && npm i solc@0.4.19 && cd ../..",
     "ganache": "bash scripts/start_ganache.sh",
     "compile": "./node_modules/.bin/truffle compile"
   },
@@ -28,11 +19,11 @@
     "url": "https://github.com/DigixGlobal/acid-solidity"
   },
   "devDependencies": {
-    "truffle": "5.1.2"
+    "truffle": "^5.1.3"
   },
   "dependencies": {
-    "@digix/truffle-lightwallet-provider": "^0.1.4",
     "ganache-cli": "^6.7.0",
-    "truffle-hdwallet-provider": "^1.0.17"
+    "scrypt": "^6.0.3",
+    "@truffle/hdwallet-provider": "^1.0.26"
   }
 }

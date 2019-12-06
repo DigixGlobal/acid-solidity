@@ -1,5 +1,4 @@
-//const LightWalletProvider = require('@digix/truffle-lightwallet-provider');
-const HDWalletProvider = require("truffle-hdwallet-provider");
+const HDWalletProvider = require("@truffle/hdwallet-provider");
 
 
 const { SECRET_MNEMONIC } = process.env;

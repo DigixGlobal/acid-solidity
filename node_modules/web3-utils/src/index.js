@@ -26,7 +26,7 @@ var _ = require('underscore');
 var ethjsUnit = require('ethjs-unit');
 var utils = require('./utils.js');
 var soliditySha3 = require('./soliditySha3.js');
-var randomHex = require('randomhex');
+var randombytes = require('randombytes');
 
 
 
@@ -38,9 +38,10 @@ var randomHex = require('randomhex');
  * @param {Object} emitter
  * @param {Function} reject
  * @param {Function} callback
+ * @param {any} optionalData
  * @return {Object} the emitter
  */
-var _fireError = function (error, emitter, reject, callback) {
+var _fireError = function (error, emitter, reject, callback, optionalData) {
     /*jshint maxcomplexity: 10 */
 
     // add data if given
@@ -57,7 +58,7 @@ var _fireError = function (error, emitter, reject, callback) {
     }
 
     if (_.isFunction(callback)) {
-        callback(error);
+        callback(error, optionalData);
     }
     if (_.isFunction(reject)) {
         // suppress uncatched error if an error listener is present
@@ -76,7 +77,7 @@ var _fireError = function (error, emitter, reject, callback) {
     if(emitter && _.isFunction(emitter.emit)) {
         // emit later, to be able to return emitter
         setTimeout(function () {
-            emitter.emit('error', error);
+            emitter.emit('error', error, optionalData);
             emitter.removeAllListeners();
         }, 1);
     }
@@ -144,6 +145,16 @@ var _flattenTypes = function(includeTuple, puts)
     return types;
 };
 
+
+/**
+ * Returns a random hex string by the given bytes size
+ *
+ * @param {Number} size
+ * @returns {string}
+ */
+var randomHex = function(size) {
+    return '0x' + randombytes(size).toString('hex');
+};
 
 /**
  * Should be called to get ascii from it's hex representation
@@ -232,7 +243,7 @@ var fromWei = function(number, unit) {
     unit = getUnitValue(unit);
 
     if(!utils.isBN(number) && !_.isString(number)) {
-        throw new Error('Please pass numbers as strings or BigNumber objects to avoid precision errors.');
+        throw new Error('Please pass numbers as strings or BN objects to avoid precision errors.');
     }
 
     return utils.isBN(number) ? ethjsUnit.fromWei(number, unit) : ethjsUnit.fromWei(number, unit).toString(10);
@@ -264,7 +275,7 @@ var toWei = function(number, unit) {
     unit = getUnitValue(unit);
 
     if(!utils.isBN(number) && !_.isString(number)) {
-        throw new Error('Please pass numbers as strings or BigNumber objects to avoid precision errors.');
+        throw new Error('Please pass numbers as strings or BN objects to avoid precision errors.');
     }
 
     return utils.isBN(number) ? ethjsUnit.toWei(number, unit) : ethjsUnit.toWei(number, unit).toString(10);
