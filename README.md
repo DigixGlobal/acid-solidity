@@ -4,6 +4,10 @@
 
 This is a simple contract that burns DigixDAO tokens in exchange for a pro-rated amount of ETH.
 
+## Configuration
+
+The deployer of the contract must configure and fund the contract.  Please see the [configuration](https://github.com/DigixGlobal/acid-solidity/blob/master/DEPLOYMENT.md) steps.
+
 ## Refund Steps - Kovan
 
 ### Approve dissolution contract on your DGD account
