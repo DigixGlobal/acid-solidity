@@ -16,7 +16,7 @@ Load your DGD Address on MyCrypto.com and send a custom transaction using the fo
 
 | Field | Value |
 |-------|-------|
-| To | `0xAca76c4e0748163dF74bc7E2d68Ba3F52753e9bc` |
+| To | [0xAca76c4e0748163dF74bc7E2d68Ba3F52753e9bc](https://kovan.etherscan.io/token/0xAca76c4e0748163dF74bc7E2d68Ba3F52753e9bc#balances) |
 | Value | `0` |
 | Data | `0x095ea7b30000000000000000000000000c516b62d0c8188434934a477c6f68d294c2158b00000000000000000000000000000000000000000000000000071afd498d0000`  |
 | Gas Limit | `1000000` |
@@ -28,7 +28,7 @@ Load your DGD Address on MyCrypto.com and send a custom transaction using the fo
 
 | Field | Value |
 |-------|-------|
-| To | `0x0c516B62d0c8188434934A477c6f68D294C2158b` |
+| To | [0x0c516B62d0c8188434934A477c6f68D294C2158b](https://kovan.etherscan.io/address/0x0c516B62d0c8188434934A477c6f68D294C2158b#code) |
 | Value | `0` |
 | Data | `0x44df8e70` |
 | Gas Limit | `1500000` |
@@ -41,7 +41,7 @@ Load your DGD Address on MyCrypto.com and send a custom transaction using the fo
 
 | Field | Value |
 |-------|-------|
-| To | `0xe0b7927c4af23765cb51314a0e0521a9645f0e2a` |
+| To | [0xe0b7927c4af23765cb51314a0e0521a9645f0e2a](https://etherscan.io/token/0xe0b7927c4af23765cb51314a0e0521a9645f0e2a) |
 | Value | `0` |
 | Data | `TBD`  |
 | Gas Limit | `1000000` |
