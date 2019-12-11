@@ -6735,10 +6735,69 @@
       "links": {},
       "address": "0xf6110f64856f46f181cf9b9e3AbB63128d4e19c2",
       "transactionHash": "0xa645b45087b67735bf6578d9f4ca10036f03b8ccb7eb12234408727f890a3f00"
+    },
+    "1576031172675": {
+      "events": {
+        "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "tokenOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "spender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokens",
+              "type": "uint256"
+            }
+          ],
+          "name": "Approval",
+          "type": "event",
+          "signature": "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925"
+        },
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokens",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event",
+          "signature": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+        }
+      },
+      "links": {},
+      "address": "0xf6110f64856f46f181cf9b9e3AbB63128d4e19c2",
+      "transactionHash": "0xa645b45087b67735bf6578d9f4ca10036f03b8ccb7eb12234408727f890a3f00"
     }
   },
   "schemaVersion": "3.0.19",
-  "updatedAt": "2019-12-06T22:40:49.643Z",
+  "updatedAt": "2019-12-11T02:26:51.808Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
