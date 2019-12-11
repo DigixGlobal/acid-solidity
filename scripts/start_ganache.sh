@@ -11,7 +11,7 @@ start_ganache() {
 #    accounts+=--account="0x$(printf %064x $i),1000000000000000000000000 "
 #  done
 
-  node_modules/.bin/ganache-cli -m ${SECRET_MNEMONIC} --gasLimit 0x989680 -e 1000000000
+  node_modules/.bin/ganache-cli -m "${SECRET_MNEMONIC}" --gasLimit 0x989680 -e 1000000000
 
   ganache_pid=$!
 }

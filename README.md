@@ -57,3 +57,25 @@ Load your DGD Address on MyCrypto.com and send a custom transaction using the fo
 | Value | `0` |
 | Data | `0x44df8e70` |
 | Gas Limit | `1500000` |
+
+# Testing
+
+To run the tests perform the following:
+
+
+1. Start ganache-cli using the provided script in a separate terminal window
+
+```
+npm install
+export SECRET_MNEMONIC="daring ancient august state diamond gift current kid reopen unit derive destroy"
+./scripts/start_ganache.sh
+```
+
+2. Run the tests
+
+```
+npm install
+export SECRET_MNEMONIC="daring ancient august state diamond gift current kid reopen unit derive destroy"
+./node_modules/.bin/truffle test
+```
+
