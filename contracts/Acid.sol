@@ -12,13 +12,18 @@ contract Acid {
   address public dgdTokenContract;
   address public owner;
 
-  modifier isOwner() {
+  modifier onlyOwner() {
     require(owner == msg.sender);
     _;
   }
 
+  modifier unlessInitialized() {
+    require(!isInitialized, "contract is already initialized");
+    _;
+  }
+
   modifier requireInitialized() {
-    require(isInitialized);
+    require(isInitialized, "contract is not initialized");
     _;
   }
 
@@ -29,22 +34,23 @@ contract Acid {
 
   function () external payable {}  
 
-  function init(uint256 _weiPerNanoDGD, address _dgdTokenContract) public isOwner() returns (bool _success) {
+  function init(uint256 _weiPerNanoDGD, address _dgdTokenContract) public onlyOwner() unlessInitialized() returns (bool _success) {
+    require(_weiPerNanoDGD > 0, "rate cannot be zero");
+    require(_dgdTokenContract != address(0), "DGD token contract cannot be empty");
     weiPerNanoDGD = _weiPerNanoDGD;
     dgdTokenContract = _dgdTokenContract;
     isInitialized = true;
     _success = true;
   }
 
-  function burn() requireInitialized() public returns (bool _success) {
+  function burn() public requireInitialized() returns (bool _success) {
     // Rate will be calculated based on the nearest decimal
     uint256 _amount = DGDInterface(dgdTokenContract).balanceOf(msg.sender);
     uint256 _wei = _amount * weiPerNanoDGD;
     require(address(this).balance >= _wei, "Contract does not have enough funds");
-    require(DGDInterface(dgdTokenContract).transferFrom(msg.sender, 0x0000000000000000000000000000000000000000, _amount), "Sender does not have any DGDs or sender has not approved dissolution contract on DGD token contract");
+    require(DGDInterface(dgdTokenContract).transferFrom(msg.sender, 0x0000000000000000000000000000000000000000, _amount), "No DGDs or DGD account not authorized");
     address _user = msg.sender;
     (_success,) = _user.call.value(_wei).gas(150000)('');
     emit Refund(_user, _amount, _wei);
   }
-
 }

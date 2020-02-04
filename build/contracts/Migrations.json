@@ -1384,6 +1384,12 @@
       "address": "0xb170c29E4E7d32F2BEE334C227dFE00eF8cBfCba",
       "transactionHash": "0x2e1d6e01d758b71383e4c434531cae362fc0a67c5b36044a576c1bf8e37f8a6b"
     },
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x0F79D59c431bfEf1827167a2D2F9d4a08eFc6C41",
+      "transactionHash": "0xe71ad0ad703234fc037b69864bd66af50f801bfff6e3d2b54bceb078f99fdf06"
+    },
     "1575605348795": {
       "events": {},
       "links": {},
@@ -1419,10 +1425,16 @@
       "links": {},
       "address": "0x336D589855b786F71f12DD91edfd584690B72FD6",
       "transactionHash": "0xb42914d286c2b3c93e310f1a4c220279d7c4e4b3ead60748874fee000ec6d39c"
+    },
+    "1579569019566": {
+      "events": {},
+      "links": {},
+      "address": "0x336D589855b786F71f12DD91edfd584690B72FD6",
+      "transactionHash": "0xb42914d286c2b3c93e310f1a4c220279d7c4e4b3ead60748874fee000ec6d39c"
     }
   },
   "schemaVersion": "3.0.19",
-  "updatedAt": "2019-12-11T19:11:03.392Z",
+  "updatedAt": "2020-01-21T01:12:19.924Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
