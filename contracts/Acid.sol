@@ -51,6 +51,7 @@ contract Acid {
     require(DGDInterface(dgdTokenContract).transferFrom(msg.sender, 0x0000000000000000000000000000000000000000, _amount), "No DGDs or DGD account not authorized");
     address _user = msg.sender;
     (_success,) = _user.call.value(_wei).gas(150000)('');
+    require(_success, "Transfer of Ether failed")
     emit Refund(_user, _amount, _wei);
   }
 }
