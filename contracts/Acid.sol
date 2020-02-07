@@ -1,4 +1,4 @@
-pragma solidity ^0.5.0;
+pragma solidity 0.5.16;
 
 import "./DGDInterface.sol";
 
@@ -46,12 +46,25 @@ contract Acid {
   function burn() public requireInitialized() returns (bool _success) {
     // Rate will be calculated based on the nearest decimal
     uint256 _amount = DGDInterface(dgdTokenContract).balanceOf(msg.sender);
-    uint256 _wei = _amount * weiPerNanoDGD;
+    uint256 _wei = mul(_amount, weiPerNanoDGD);
     require(address(this).balance >= _wei, "Contract does not have enough funds");
     require(DGDInterface(dgdTokenContract).transferFrom(msg.sender, 0x0000000000000000000000000000000000000000, _amount), "No DGDs or DGD account not authorized");
     address _user = msg.sender;
-    (_success,) = _user.call.value(_wei).gas(150000)('');
-    require(_success, "Transfer of Ether failed")
+    (_success,) = _user.call.value(_wei)('');
+    require(_success, "Transfer of Ether failed");
     emit Refund(_user, _amount, _wei);
+  }
+
+  function mul(uint256 a, uint256 b) internal pure returns (uint256) {
+    // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
+    // benefit is lost if 'b' is also tested.
+    // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522
+    if (a == 0) {
+      return 0;
+    }
+    uint256 c = a * b;
+    require(c / a == b, "SafeMath: multiplication overflow");
+
+    return c;
   }
 }
