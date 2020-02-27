@@ -25,8 +25,8 @@ module.exports = {
         0,
         20
       ),
-      gas: 10000000,
-      gasPrice: 20 * (10 ** 9),
+      gas: 9950000,
+      gasPrice: 55 * (10 ** 9),
       network_id: '1',
     },
     development: {
