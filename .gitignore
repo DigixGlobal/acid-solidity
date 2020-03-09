@@ -1,6 +1,7 @@
 .node_modules/**
 truffle-config.js
 kovan.env
+kovan2.env
 mainnet.env
 testnet.env
 testwallets/**
