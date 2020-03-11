@@ -18,7 +18,7 @@ wei per DGD value 193124288 @ 386248576296155750000000 wei (386248.57629615575 E
 ```javascript
 var acid = await Acid.deployed();
 var dgdToken = '0xAca76c4e0748163dF74bc7E2d68Ba3F52753e9bc';
-acid.init(193124288,dgdToken).sendTransaction({from: owner, gas: 300000, gasPrice web3.eth.toWei(20, 'gwei')});
+acid.init(193124288,dgdToken,{from: owner, gas: 300000, gasPrice web3.eth.toWei(20, 'gwei')});
 ```
 
 ### Ethereum Mainnet
@@ -26,6 +26,6 @@ acid.init(193124288,dgdToken).sendTransaction({from: owner, gas: 300000, gasPric
 ```javascript
 var acid = await Acid.deployed();
 var dgdToken = '0xe0b7927c4af23765cb51314a0e0521a9645f0e2a';
-acid.init(193124288,dgdToken).sendTransaction({from: owner, gas: 300000, gasPrice web3.eth.toWei(20, 'gwei')});
+acid.init(193124288,dgdToken,{from: owner, gas: 300000, gasPrice web3.eth.toWei(20, 'gwei')});
 ```
 
